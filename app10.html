@@ -1,0 +1,64 @@
+<html ng-app="myApp">
+   <head>
+              <script src="https://code.angularjs.org/latest/angular.min.js"></script>
+
+  </head>
+<body>
+    <div ng-controller="myCtrl">
+       Rows To Display: <input type="number" step="1" min="0" max="5" ng-model="rowLimt"/>
+    <table border="1">
+     <thead>
+        <th>Name</th>
+         <th>Date Of Birth</th>
+         <th>Gender</th>
+         <th>Salary(Number)</th>
+         <th>Salary(Currency>
+        
+   </thead>        
+        <tbody>
+          <tr ng-repeat="emp in employies|limitTo:rowLimt">
+              <td>{{emp.name | uppercase}}</td>
+               <td>{{emp.DateOfBirth | date:"dd/MM/yyyy"}}</td>
+               <td>{{emp.gender | lowercase}}</td>
+               <td>{{emp.salary | number:1}}</td>
+               <td>{{emp.salary | currency}}</td>
+                          
+            
+            
+          </tr>
+        
+        
+        
+        
+        </tbody>
+        
+        
+        
+        
+        
+        
+        
+</table>
+    
+    
+    
+    </div>
+    
+</body>
+<script>
+   var app=angular
+                .module("myApp",[])
+                .controller("myCtrl",function($scope){
+                    var  employies=[{name:"Sudama",DateOfBirth:new Date("July 08,1989"),gender:"Male",salary:1000.10},
+                                    {name:"Deep",DateOfBirth:new Date("June 08,1999"),gender:"Female",salary:10005.},
+                                    {name:"shivam",DateOfBirth:new Date("January 08,1989"),gender:"Male",salary:1000.},
+                                    {name:"Vidyut",DateOfBirth:new Date("July 08,2000"),gender:"Male",salary:1000.10},
+                                    {name:"Tapis",DateOfBirth:new Date("February 08,1989"),gender:"Male",salary:1000.10}
+                                   ];
+                    
+                    
+                       $scope.employies=employies;
+                       $scope.rowLimt=3;
+                });
+</script>
+</html>

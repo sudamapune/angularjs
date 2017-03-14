@@ -1,0 +1,72 @@
+<html ng-app="myApp">
+   <head>
+              <script src="https://code.angularjs.org/latest/angular.min.js"></script>
+
+  </head>
+<body>
+    <div ng-controller="myCtrl">
+    <table border="1" align="center">
+     <thead>
+        <th>Name</th>
+         <th>Like</th>
+         <th>Dislike</th>
+         <th>Like/Dislike</th>
+        
+   </thead>        
+        <tbody>
+          <tr ng-repeat="tech in technologies">
+              <td>{{tech.name}}</td>  
+              <td>{{tech.like}}</td>  
+              <td>{{tech.dislike}}</td>  
+              <td>
+                  <input type="button" ng-click="technologiesLike(tech)" value="Like">
+                  <input type="button" ng-click="technologiesDislike(tech)" value="Dislike">
+              </td>  
+            
+            
+          </tr>
+        
+        
+        
+        
+        </tbody>
+        
+        
+        
+        
+        
+        
+        
+</table>
+    
+    
+    
+    </div>
+    
+</body>
+<script>
+   var app=angular
+                .module("myApp",[])    
+                .controller("myCtrl",function($scope){
+                    var technologies=[
+                        {name:'JAVA',like:0,dislike:0},
+                        {name:'PHP',like:0,dislike:0},
+                        {name:'ASP.Net',like:0,dislike:0},
+                        {name:'AngularJs',like:0,dislike:0}
+                        
+                    ];
+                    $scope.technologies=technologies;
+                    
+                    
+                    $scope.technologiesLike=function(technology){
+                        
+                        technology.like++;
+                    }
+                     $scope.technologiesDislike=function(technology){
+                        
+                        technology.dislike++;
+                    }
+                    
+                });
+</script>
+</html>

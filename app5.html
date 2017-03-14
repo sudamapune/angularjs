@@ -1,0 +1,44 @@
+<html ng-app="myApp">
+   
+    <head>
+    
+          <script src="https://code.angularjs.org/latest/angular.min.js"></script>
+
+    </head>
+<body>
+    <div ng-controller="myCtrl">
+    <div>
+    FirstName:{{student.firstName}}
+    
+    </div>
+        <hr/>
+    <div>
+    LastName:{{student.lastName}}
+    
+    </div>
+                <hr/>
+
+    <div><lable>Image:</lable><br>
+    <img ng-src="{{student.image}}" style="hight;10000px; width:500px;"/>
+    
+    </div>
+                <hr/>
+
+        </div>
+    </body>
+    <script>
+    var app=angular
+               .module("myApp",[])
+               .controller("myCtrl",function($scope){
+         
+         var student={
+             firstName:"Sudama",
+             lastName:"Vishwakarma",
+             image:"C:/Users/sunrays/Desktop/AngularjsAPP/download.jpg"
+         };
+         $scope.student=student;
+     });
+    
+    </script>
+
+</html>

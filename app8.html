@@ -1,0 +1,43 @@
+<html ng-app="myApp">
+   
+    <head>
+    
+          <script src="https://code.angularjs.org/latest/angular.min.js"></script>
+
+    </head>
+   <body>
+     <div ng-controller="myCtrl">
+       <ul>
+        <li ng-repeat="country in countries">
+           {{country.name}}- Index={{$index}}
+           <ul>
+            <li ng-repeat="city in country.cities">
+               {{city.name}}- Paren Index={{$parent.$index}}, Index={{$index}}
+               
+            </li>
+            
+            
+            </ul>
+           
+           
+           </li> 
+         
+         
+         
+         </ul> 
+       </div>
+    </body>
+    <script>
+    var app=angular
+               .module("myApp",[])
+               .controller("myCtrl",function($scope){
+         
+         var countries=[{name:"UK",cities:[{name:"London"},{name:"ManChester"},{name:"Birmingham"}]},
+                        {name:"India",cities:[{name:"Mumbai"},{name:"Hyberabad"},{name:"Chennai"}]}                      
+                      ];
+         $scope.countries=countries;
+     });
+    
+    </script>
+
+</html>

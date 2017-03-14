@@ -1,0 +1,42 @@
+<html ng-app="myApp">
+   
+    <head>
+    
+          <script src="https://code.angularjs.org/latest/angular.min.js"></script>
+
+    </head>
+   <body>
+     <div ng-controller="myCtrl">
+    <table border="1" align="center">
+      <thead>
+        <th>FirstName:</th>
+        <th>LastName:</th>
+        <th>Gender:</th>
+      </thead>
+        <tbody>
+        <tr ng-repeat="students in student">
+            <td>{{students.firstName}}</td>
+            <td>{{students.lastName}}</td>
+            <td>{{students.gender}}</td>
+               
+            
+       </tr>
+            </tbody>
+   </table>   
+       </div>
+    </body>
+    <script>
+    var app=angular
+               .module("myApp",[])
+               .controller("myCtrl",function($scope){
+         
+         var student=[{firstName:"Sudama",lastName:"Vishwakarma",gender:"Male"},
+             {firstName:"Shivam",lastName:"Barman",gender:"Male"},
+             {firstName:"Renu",lastName:"Gupta",gender:"Female"},
+             {firstName:"Vidyut",lastName:"Sighai",gender:"Male"}];
+         $scope.student=student;
+     });
+    
+    </script>
+
+</html>

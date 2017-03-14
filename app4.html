@@ -1,0 +1,40 @@
+<html ng-app="myApp">
+   
+    <head>
+    
+          <script src="https://code.angularjs.org/latest/angular.min.js"></script>
+
+    </head>
+<body>
+    <div ng-controller="myCtrl">
+    <div>
+    FirstName:{{student.firstName}}
+    
+    </div>
+    <div>
+    LastName:{{student.lastName}}
+    
+    </div>
+        
+    <div>
+    Gender:{{student.gender}}
+    
+    </div>
+        </div>
+    </body>
+    <script>
+    var app=angular
+               .module("myApp",[])
+               .controller("myCtrl",function($scope){
+         
+         var student={
+             firstName:"Sudama",
+             lastName:"Vishwakarma",
+             gender:"Male"
+         };
+         $scope.student=student;
+     });
+    
+    </script>
+
+</html>

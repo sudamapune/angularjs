@@ -1,0 +1,65 @@
+<html ng-app="myApp">
+   
+    <head>
+    
+          <script src="https://code.angularjs.org/latest/angular.min.js"></script>
+
+    </head>
+<body>
+     <div ng-controller="myCtrl">
+    <table>
+    <tr>
+       <td>FistName:</td>
+        <td><input type="text"  ng-model="student.firstName"/></td>
+           
+   </tr>
+    <tr>
+       <td>LastName:</td>
+        <td><input type="text"  ng-model="student.lastName"/></td>
+           
+   </tr>
+        <tr>
+       <td>Gender:</td>
+        <td><input type="text"  ng-model="student.gender"/></td>
+           
+   </tr>
+    
+    
+    
+    </table><hr/>
+   
+    <div>
+    FirstName:{{student.firstName}}
+    
+    </div>
+        <hr/>
+    <div>
+    LastName:{{student.lastName}}
+    
+    </div>
+                <hr/>
+
+    <div>
+    Gender:{{student.gender}}
+    
+    </div>
+                <hr/>
+
+        </div>
+    </body>
+    <script>
+    var app=angular
+               .module("myApp",[])
+               .controller("myCtrl",function($scope){
+         
+         var student={
+             firstName:"Sudama",
+             lastName:"Vishwakarma",
+             gender:"Male"
+         };
+         $scope.student=student;
+     });
+    
+    </script>
+
+</html>

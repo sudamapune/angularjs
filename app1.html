@@ -1,0 +1,35 @@
+<html ng-app="myApp">
+   
+    <head>
+    
+          <script src="https://code.angularjs.org/latest/angular.min.js"></script>
+
+    </head>
+<body ng-controller="ctrl">
+        <div>
+          {{name}}
+    
+        </div>
+        
+        <div>
+          {{name}}
+    
+        </div>
+        
+        
+      </body>
+    
+
+<script>
+    
+     var app=angular.module("myApp",[]);
+    
+    app.controller('ctrl',function($scope){
+        
+        $scope.name="Hello! Sudama";
+        
+    });
+    
+    </script>
+
+</html>
