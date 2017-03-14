@@ -2,6 +2,6 @@
 ## for test purpose
 **Check**
 *Check*
-> Use java to compile it
+> Use Angularjs to compile it
 [www.google.com]
 
