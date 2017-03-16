@@ -1,12 +1,39 @@
 <html ng-app="myApp">
    <head>
               <script src="https://code.angularjs.org/latest/angular.min.js"></script>
+ <style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
 
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+     .head1{
+        border-collapse: collapse;
+         width: 100%; 
+         background-color: #4CAF50;
+         color: white; 
+     }
+</style>
+       
   </head>
+    
 <body>
+    <div class="head1"><h1>First web Page</h1></div>
     <div ng-controller="myCtrl">
-       Rows To Display: <input type="number" step="1" min="0" max="5" ng-model="rowLimt"/>
-    <table border="1">
+       Rows To Display: <input type="number" step="1" min="0" max="25" ng-model="rowLimt"/>
+        <hr/>
+    <table>
      <thead>
         <th>Name</th>
          <th>Date Of Birth</th>
@@ -39,11 +66,11 @@
         
         
 </table>
-    
+    <hr/>
     
     
     </div>
-    
+    <div class="head1"><h1 align="center">copyright © 2010 - 2017 </h1></div> 
 </body>
 <script>
    var app=angular
@@ -53,12 +80,27 @@
                                     {name:"Deep",DateOfBirth:new Date("June 08,1999"),gender:"Female",salary:10005.},
                                     {name:"shivam",DateOfBirth:new Date("January 08,1989"),gender:"Male",salary:1000.},
                                     {name:"Vidyut",DateOfBirth:new Date("July 08,2000"),gender:"Male",salary:1000.10},
+                                    {name:"Tapis",DateOfBirth:new Date("February 08,1989"),gender:"Male",salary:1000.10},
+                                    {name:"Deep",DateOfBirth:new Date("June 08,1999"),gender:"Female",salary:10005.},
+                                    {name:"shivam",DateOfBirth:new Date("January 08,1989"),gender:"Male",salary:1000.},
+                                    {name:"Vidyut",DateOfBirth:new Date("July 08,2000"),gender:"Male",salary:1000.10},
+                                    {name:"Tapis",DateOfBirth:new Date("February 08,1989"),gender:"Male",salary:1000.10},
+                                    {name:"Deep",DateOfBirth:new Date("June 08,1999"),gender:"Female",salary:10005.},
+                                    {name:"shivam",DateOfBirth:new Date("January 08,1989"),gender:"Male",salary:1000.},
+                                    {name:"Vidyut",DateOfBirth:new Date("July 08,2000"),gender:"Male",salary:1000.10},
+                                    {name:"Tapis",DateOfBirth:new Date("February 08,1989"),gender:"Male",salary:1000.10},
+                                    {name:"Deep",DateOfBirth:new Date("June 08,1999"),gender:"Female",salary:10005.},
+                                    {name:"shivam",DateOfBirth:new Date("January 08,1989"),gender:"Male",salary:1000.},
+                                    {name:"Vidyut",DateOfBirth:new Date("July 08,2000"),gender:"Male",salary:1000.10},
                                     {name:"Tapis",DateOfBirth:new Date("February 08,1989"),gender:"Male",salary:1000.10}
+
+
+
                                    ];
                     
                     
                        $scope.employies=employies;
-                       $scope.rowLimt=3;
+                       $scope.rowLimt=10;
                 });
 </script>
 </html>
